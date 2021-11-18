@@ -9,7 +9,12 @@ const userSchema = new Schema(
     },
     githubId: String,
     password: String,
-    avatar: String
+    avatar: String,
+    role: {
+      type: String,
+      enum: ['user', 'admin'],
+      default: 'user'
+    }
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`
